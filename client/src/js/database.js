@@ -38,32 +38,34 @@ const initdb = async () =>
 
 // Function to add content to the database
 export const putDb = async (content) => {
-  const db = await initdb();
+  const jateDb = await openDB('jate', 1);
 
-  const tx = db.transaction('jate', 'readwrite');
+  const tx = jateDb.transaction('jate', 'readwrite');
   const store = tx.objectStore('jate');
+  const result = await store.put({ id: 1, value: content });
 
   // Add the content to the database
-  const id = await store.add(content);
-
-  await tx.done;
+  // const id = await store.add(content);
+  // await tx.done;
 
   console.log(`Content with ID ${id} added to the database`);
 };
 
 // Function to get all content from the database
 export const getDb = async () => {
-  const db = await initdb();
+  const jateDb = await openDB('jate', 1);
 
-  const tx = db.transaction('jate', 'readonly');
+  const tx = jateDb.transaction('jate', 'readonly');
   const store = tx.objectStore('jate');
-
+  const result = await store.get(1);
+  result ? console.log('Data from database:', result.value) : console.log('Data does not exist in database.');
+  return result?.value;
   // Retrieve all content from the database
-  const contentArray = await store.getAll();
+  // const contentArray = await store.getAll();
 
-  await tx.done;
+  // await tx.done;
 
-  return contentArray;
+  // return contentArray;
 };
 
 initdb();
