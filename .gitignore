@@ -5,3 +5,4 @@ npm-debug.log
 .DS_Store
 /*.env
 README1.md
+package-lock.json
