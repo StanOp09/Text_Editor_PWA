@@ -56,6 +56,4 @@ THEN I should have proper build scripts for a webpack application
 For any questions or suggestions, feel free to reach out to me on GitHub: [StanOp09](https://github.com/StanOp09) or via email: stanleykaopare@gmail.com.
 
 ## Credits
-- Sean Roshan
-- Chat GPT
-- [IndexedDB(https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- IndexedDB(https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
